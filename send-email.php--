@@ -1,0 +1,257 @@
+<?php
+// Check if the form was submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+    // Get form data and sanitize inputs
+    $name = filter_var($_POST["name"], FILTER_SANITIZE_STRING);
+    $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
+    $phone = filter_var($_POST["phone"], FILTER_SANITIZE_STRING);
+    $moveDate = isset($_POST["moveDate"]) ? filter_var($_POST["moveDate"], FILTER_SANITIZE_STRING) : "Not specified";
+    $moveType = filter_var($_POST["moveType"], FILTER_SANITIZE_STRING);
+    $moveFrom = filter_var($_POST["moveFrom"], FILTER_SANITIZE_STRING);
+    $moveTo = filter_var($_POST["moveTo"], FILTER_SANITIZE_STRING);
+    $message = filter_var($_POST["message"], FILTER_SANITIZE_STRING);
+    
+    // Validate required fields
+    $errors = array();
+    
+    if (empty($name)) {
+        $errors[] = "Name is required";
+    }
+    
+    if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors[] = "Valid email is required";
+    }
+    
+    if (empty($phone)) {
+        $errors[] = "Phone number is required";
+    }
+    
+    if (empty($moveType)) {
+        $errors[] = "Move type is required";
+    }
+    
+    if (empty($moveFrom)) {
+        $errors[] = "Moving from location is required";
+    }
+    
+    if (empty($moveTo)) {
+        $errors[] = "Moving to location is required";
+    }
+    
+    if (empty($message)) {
+        $errors[] = "Message is required";
+    }
+    
+    // If there are no validation errors, proceed with sending email
+    if (empty($errors)) {
+        // Set recipient email (your email address)
+        $to = "excellentmoversandpackers68@gmail.com";
+        
+        // Set email subject
+        $subject = "New Moving Enquiry from $name";
+        
+        // Create email headers
+        $headers = "From: $email" . "\r\n";
+        $headers .= "Reply-To: $email" . "\r\n";
+        $headers .= "MIME-Version: 1.0" . "\r\n";
+        $headers .= "Content-Type: text/html; charset=UTF-8" . "\r\n";
+        
+        // Build email body in HTML format
+        $emailBody = "
+        <html>
+        <head>
+            <title>New Moving Enquiry</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    line-height: 1.6;
+                    color: #333;
+                }
+                .container {
+                    max-width: 600px;
+                    margin: 0 auto;
+                    padding: 20px;
+                    border: 1px solid #ddd;
+                    border-radius: 5px;
+                }
+                h2 {
+                    color: #0056b3;
+                    border-bottom: 2px solid #0056b3;
+                    padding-bottom: 10px;
+                }
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin-bottom: 20px;
+                }
+                th, td {
+                    padding: 10px;
+                    text-align: left;
+                    border-bottom: 1px solid #ddd;
+                }
+                th {
+                    background-color: #f8f9fa;
+                    font-weight: bold;
+                }
+                .message-box {
+                    background-color: #f8f9fa;
+                    padding: 15px;
+                    border-radius: 5px;
+                    margin-top: 20px;
+                }
+            </style>
+        </head>
+        <body>
+            <div class='container'>
+                <h2>New Moving Enquiry from Excellent Movers Website</h2>
+                <p>You have received a new enquiry with the following details:</p>
+                
+                <table>
+                    <tr>
+                        <th>Name:</th>
+                        <td>$name</td>
+                    </tr>
+                    <tr>
+                        <th>Email:</th>
+                        <td>$email</td>
+                    </tr>
+                    <tr>
+                        <th>Phone:</th>
+                        <td>$phone</td>
+                    </tr>
+                    <tr>
+                        <th>Planned Moving Date:</th>
+                        <td>$moveDate</td>
+                    </tr>
+                    <tr>
+                        <th>Type of Move:</th>
+                        <td>$moveType</td>
+                    </tr>
+                    <tr>
+                        <th>Moving From:</th>
+                        <td>$moveFrom</td>
+                    </tr>
+                    <tr>
+                        <th>Moving To:</th>
+                        <td>$moveTo</td>
+                    </tr>
+                </table>
+                
+                <div class='message-box'>
+                    <h3>Additional Details:</h3>
+                    <p>$message</p>
+                </div>
+                
+                <p>Please respond to this enquiry as soon as possible.</p>
+            </div>
+        </body>
+        </html>
+        ";
+        
+        // Send email
+        $mailSent = mail($to, $subject, $emailBody, $headers);
+        
+        // Send auto-reply to the customer
+        if ($mailSent) {
+            $customerSubject = "Thank You for Contacting Excellent Movers and Packers";
+            
+            $customerHeaders = "From: Excellent Movers and Packers <info@excellentmoversandpackers.com>" . "\r\n";
+            $customerHeaders .= "Reply-To: info@excellentmoversandpackers.com" . "\r\n";
+            $customerHeaders .= "MIME-Version: 1.0" . "\r\n";
+            $customerHeaders .= "Content-Type: text/html; charset=UTF-8" . "\r\n";
+            
+            $customerEmailBody = "
+            <html>
+            <head>
+                <title>Thank You for Contacting Us</title>
+                <style>
+                    body {
+                        font-family: Arial, sans-serif;
+                        line-height: 1.6;
+                        color: #333;
+                    }
+                    .container {
+                        max-width: 600px;
+                        margin: 0 auto;
+                        padding: 20px;
+                        border: 1px solid #ddd;
+                        border-radius: 5px;
+                    }
+                    h2 {
+                        color: #0056b3;
+                        border-bottom: 2px solid #0056b3;
+                        padding-bottom: 10px;
+                    }
+                    .highlight {
+                        background-color: #f8f9fa;
+                        padding: 15px;
+                        border-radius: 5px;
+                        margin: 20px 0;
+                    }
+                    .footer {
+                        margin-top: 30px;
+                        padding-top: 15px;
+                        border-top: 1px solid #ddd;
+                        font-size: 0.9em;
+                    }
+                </style>
+            </head>
+            <body>
+                <div class='container'>
+                    <h2>Thank You for Contacting Excellent Movers and Packers</h2>
+                    
+                    <p>Dear $name,</p>
+                    
+                    <p>Thank you for reaching out to us regarding your upcoming move. We have received your enquiry and appreciate your interest in our services.</p>
+                    
+                    <div class='highlight'>
+                        <p>A member of our team will review your requirements and contact you within 24 hours to discuss your move in detail and provide you with a customized quote.</p>
+                    </div>
+                    
+                    <p>Here's a summary of the information you provided:</p>
+                    <ul>
+                        <li><strong>Type of Move:</strong> $moveType</li>
+                        <li><strong>Moving From:</strong> $moveFrom</li>
+                        <li><strong>Moving To:</strong> $moveTo</li>
+                        <li><strong>Planned Moving Date:</strong> $moveDate</li>
+                    </ul>
+                    
+                    <p>If you need immediate assistance or have any additional questions, please don't hesitate to call us at +91 82955 88602.</p>
+                    
+                    <p>We look forward to helping you with your move!</p>
+                    
+                    <p>Warm regards,<br>
+                    The Excellent Movers and Packers Team<br>
+                    Visakhapatnam, Andhra Pradesh</p>
+                    
+                    <div class='footer'>
+                        <p>This is an automated response. Please do not reply to this email.</p>
+                    </div>
+                </div>
+            </body>
+            </html>
+            ";
+            
+            mail($email, $customerSubject, $customerEmailBody, $customerHeaders);
+            
+            // Redirect to thank you page or show success message
+            header("Location: contact-us.php?status=success");
+            exit();
+        } else {
+            // If mail sending fails
+            header("Location: contact-us.php?status=error");
+            exit();
+        }
+    } else {
+        // If there are validation errors, redirect back with error message
+        $errorString = implode(",", $errors);
+        header("Location: contact-us.html?status=validation_error&errors=" . urlencode($errorString));
+        exit();
+    }
+} else {
+    // If the form was not submitted properly, redirect to the form page
+    header("Location: contact-us.php");
+    exit();
+}
+?>
