@@ -201,17 +201,17 @@
                 <p>We provide our moving and packing services throughout Visakhapatnam and surrounding areas</p>
             </div>
             <div class="areas-list">
-                <div class="area-item">Visakhapatnam City</div>
-                <div class="area-item">Gajuwaka</div>
-                <div class="area-item">Madhurawada</div>
-                <div class="area-item">Pendurthi</div>
-                <div class="area-item">Anakapalle</div>
-                <div class="area-item">Bheemunipatnam</div>
-                <div class="area-item">Srikakulam</div>
-                <div class="area-item">Vizianagaram</div>
-                <div class="area-item">Kakinada</div>
-                <div class="area-item">Rajahmundry</div>
-                <div class="area-item">All of Andhra Pradesh</div>
+                <a class="area-item" href="/areas/mvp-colony">MVP Colony</a>
+                <a class="area-item" href="/areas/kurmannapalem-gajuwaka">Gajuwaka</a>
+                <a class="area-item" href="/areas/madhurawada">Madhurawada</a>
+                <a class="area-item" href="/areas/seethammadhara">Seethammadhara</a>
+                <a class="area-item" href="/areas/gopalapatnam">Gopalapatnam</a>
+                <a class="area-item" href="/areas/pendurthi">Pendurthi</a>
+                <a class="area-item" href="/areas/anakapalle">Anakapalle</a>
+                <a class="area-item" href="/areas/steel-plant">Steel Plant</a>
+                <a class="area-item" href="/areas/srikakulam">Srikakulam</a>
+                <a class="area-item" href="/areas/vizianagaram">Vizianagaram</a>
+                <a class="area-item" href="/areas/">All Service Areas &raquo;</a>
             </div>
         </div>
     </section>

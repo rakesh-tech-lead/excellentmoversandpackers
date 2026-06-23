@@ -38,6 +38,17 @@
                     </ul>
                 </div>
                 <div class="footer-col">
+                    <h3>Popular Areas</h3>
+                    <ul class="footer-links">
+                        <li><a href="/areas/mvp-colony">Packers &amp; Movers MVP Colony</a></li>
+                        <li><a href="/areas/madhurawada">Packers &amp; Movers Madhurawada</a></li>
+                        <li><a href="/areas/kurmannapalem-gajuwaka">Packers &amp; Movers Gajuwaka</a></li>
+                        <li><a href="/areas/gopalapatnam">Packers &amp; Movers Gopalapatnam</a></li>
+                        <li><a href="/areas/pendurthi">Packers &amp; Movers Pendurthi</a></li>
+                        <li><a href="/areas/">View All Service Areas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
                     <h3>Contact Info</h3>
                     <ul class="footer-links">
                         <li>S/O Tallewar</li>

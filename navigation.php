@@ -69,8 +69,9 @@
 							<a href="https://excellentmoversandpackers.com/packers-movers/vehicle-transportation.php">Vehicle Transportation</a>
 						</div>
 					</li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#why-us">Why Us</a></li>
+                    <li><a href="https://excellentmoversandpackers.com/areas/">Areas We Serve</a></li>
+                    <li><a href="/#about">About</a></li>
+                    <li><a href="/#why-us">Why Us</a></li>
                     <li><a href="https://excellentmoversandpackers.com/faq.php">FAQ</a></li>
                     <li><a href="https://excellentmoversandpackers.com/contact-us.php">Contact Us</a></li>
                 </ul>
