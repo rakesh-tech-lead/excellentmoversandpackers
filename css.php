@@ -1088,6 +1088,30 @@
     .fab { width: 50px; height: 50px; font-size: 1.4rem; }
 }
 
+/* ===== Trust badges strip ===== */
+.trust-badges { background: var(--white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.trust-badges .tb-inner {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 14px 32px;
+    padding: 26px 0;
+}
+.trust-badges .tb-item { display: inline-flex; align-items: center; gap: 10px; font-weight: 600; color: var(--dark-color); font-size: 0.98rem; }
+.trust-badges .tb-icon { font-size: 1.5rem; line-height: 1; }
+.trust-badges .tb-item small { display: block; font-weight: 500; color: var(--muted); font-size: 0.8rem; }
+
+/* ===== Cost calculator ===== */
+.calc-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow-md); padding: 30px; }
+.calc-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 18px; }
+.calc-field label { display: block; font-weight: 600; margin-bottom: 7px; color: var(--dark-color); font-size: 0.95rem; }
+.calc-checks { display: flex; flex-direction: column; gap: 8px; }
+.calc-checks label { font-weight: 500; display: flex; align-items: center; gap: 8px; margin: 0; color: var(--text-color); }
+.calc-checks input { width: 16px; height: 16px; }
+.calc-btn { width: 100%; margin-top: 6px; }
+.calc-result { margin-top: 26px; padding: 26px; border-radius: var(--radius); background: var(--primary-gradient); color: #fff; text-align: center; }
+.calc-result .calc-amount-label { font-size: 0.95rem; opacity: 0.9; }
+.calc-result .calc-amount { font-size: 2.3rem; font-weight: 800; margin: 6px 0 10px; }
+.calc-result .calc-note { font-size: 0.85rem; color: rgba(255,255,255,0.88); max-width: 520px; margin: 0 auto 16px; }
+@media (max-width: 600px) { .calc-row { grid-template-columns: 1fr; } .calc-result .calc-amount { font-size: 1.9rem; } }
+
 /* Contact / quote form status note */
 .form-note { margin-top: 12px; margin-bottom: 0; font-size: 0.92rem; font-weight: 600; color: var(--secondary-color); min-height: 1em; }
 .contact-form .btn-whatsapp { width: 100%; }

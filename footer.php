@@ -26,6 +26,7 @@
                     <ul class="footer-links">
                         <li><a href="#home">Home</a></li>
                         <li><a href="#services">Services</a></li>
+                        <li><a href="/cost-calculator.php">Cost Calculator</a></li>
                         <li><a href="/about.php">About Us</a></li>
                         <li><a href="/why-us.php">Why Choose Us</a></li>
                         <li><a href="#testimonials">Testimonials</a></li>

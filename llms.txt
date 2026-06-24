@@ -127,6 +127,7 @@
 ## Other Pages
 
 - [Home](https://excellentmoversandpackers.com/)
+- [Cost Calculator](https://excellentmoversandpackers.com/cost-calculator.php)
 - [All Service Areas](https://excellentmoversandpackers.com/areas/)
 - [States We Serve](https://excellentmoversandpackers.com/states/)
 - [Blog](https://excellentmoversandpackers.com/blog/)

@@ -49,6 +49,20 @@ include('header.php');
             </div>
         </div>
     </section>
+<!-- Trust badges -->
+    <section class="trust-badges">
+        <div class="container">
+            <div class="tb-inner">
+                <div class="tb-item"><span class="tb-icon">⭐</span><span>4.9/5 Rated<small>by 187+ customers</small></span></div>
+                <div class="tb-item"><span class="tb-icon">🛡️</span><span>Safe &amp; Insured<small>transit protection available</small></span></div>
+                <div class="tb-item"><span class="tb-icon">👷</span><span>Trained Staff<small>experienced movers</small></span></div>
+                <div class="tb-item"><span class="tb-icon">💰</span><span>No Hidden Charges<small>transparent pricing</small></span></div>
+                <div class="tb-item"><span class="tb-icon">⏱️</span><span>On-Time Delivery<small>we value your time</small></span></div>
+                <div class="tb-item"><span class="tb-icon">📍</span><span>24+ Areas<small>across Visakhapatnam</small></span></div>
+            </div>
+        </div>
+    </section>
+
 <!-- Services Section -->
     <section id="services" class="section services">
         <div class="container">
@@ -118,6 +132,20 @@ include('header.php');
                         <a class="service-link" href="/packers-movers/vehicle-transportation.php">Learn More →</a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cost Calculator -->
+    <section id="cost-calculator" class="section why-us">
+        <div class="container">
+            <div class="section-title">
+                <span class="eyebrow">Instant Estimate</span>
+                <h2>Moving Cost Calculator</h2>
+                <p>Get an approximate price for your move in seconds — then get an exact quote on WhatsApp</p>
+            </div>
+            <div style="max-width:760px;margin:0 auto;">
+                <?php include('cost-calculator-widget.php'); ?>
             </div>
         </div>
     </section>

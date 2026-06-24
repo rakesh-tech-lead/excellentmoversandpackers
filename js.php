@@ -139,6 +139,51 @@
                 });
             }
 
+            // Cost calculator
+            const calcForm = document.getElementById('calcForm');
+            if (calcForm) {
+                const base = { few:[1500,4000], '1rk':[2500,6000], '1bhk':[4000,9000], '2bhk':[7000,15000], '3bhk':[12000,25000], '4bhk':[20000,40000], office:[10000,40000] };
+                const distF = { local:1, '300':2.2, '700':3.0, '1200':3.8, '1800':4.6 };
+                const r500 = n => Math.round(n / 500) * 500;
+                const inr = n => '₹' + n.toLocaleString('en-IN');
+                calcForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const sizeEl = document.getElementById('calcSize');
+                    const distEl = document.getElementById('calcDistance');
+                    const floor = parseFloat(document.getElementById('calcFloor').value) || 1;
+                    const range = base[sizeEl.value];
+                    if (!range) { calcForm.reportValidity(); return; }
+                    let lo = range[0], hi = range[1];
+                    const f = distF[distEl.value] || 1;
+                    lo *= f; hi *= f;
+                    const packing = document.getElementById('calcPacking').checked;
+                    const storage = document.getElementById('calcStorage').checked;
+                    const vehicle = document.getElementById('calcVehicle').checked;
+                    if (packing) { lo *= 1.15; hi *= 1.15; }
+                    if (storage) { lo += 2000; hi += 5000; }
+                    if (vehicle) { lo += 5000; hi += 12000; }
+                    lo *= floor; hi *= floor;
+                    lo = r500(lo); hi = r500(hi);
+
+                    document.getElementById('calcAmount').textContent = inr(lo) + ' – ' + inr(hi);
+                    const res = document.getElementById('calcResult');
+                    res.hidden = false;
+
+                    const addons = [];
+                    if (packing) addons.push('Full packing');
+                    if (storage) addons.push('Storage');
+                    if (vehicle) addons.push('Vehicle transport');
+                    let msg = "Hi, I used your cost calculator and would like an exact quote.\n\n";
+                    msg += "Move: " + sizeEl.options[sizeEl.selectedIndex].text + "\n";
+                    msg += "Distance: " + distEl.options[distEl.selectedIndex].text + "\n";
+                    if (addons.length) msg += "Add-ons: " + addons.join(', ') + "\n";
+                    msg += "Estimate shown: " + inr(lo) + " - " + inr(hi);
+                    document.getElementById('calcWa').href = "https://wa.me/918295588602?text=" + encodeURIComponent(msg);
+
+                    res.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                });
+            }
+
             // Gallery lightbox
             const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
             if (galleryItems.length) {
