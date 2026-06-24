@@ -3,21 +3,65 @@
         document.addEventListener('DOMContentLoaded', function() {
             const menuBtn = document.querySelector('.mobile-menu-btn');
             const navbar = document.getElementById('navbar');
+            const navClose = document.querySelector('.nav-close');
+            const navOverlay = document.querySelector('.nav-overlay');
 
             if (menuBtn && navbar) {
+                const openMenu = function() {
+                    navbar.classList.add('active');
+                    if (navOverlay) navOverlay.classList.add('active');
+                    document.body.classList.add('menu-open');
+                    menuBtn.setAttribute('aria-expanded', 'true');
+                    menuBtn.innerHTML = '&times;';
+                };
+                const closeMenu = function() {
+                    navbar.classList.remove('active');
+                    if (navOverlay) navOverlay.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                    menuBtn.setAttribute('aria-expanded', 'false');
+                    menuBtn.innerHTML = '&#9776;';
+                };
+
                 menuBtn.addEventListener('click', function() {
-                    const open = navbar.classList.toggle('active');
-                    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+                    navbar.classList.contains('active') ? closeMenu() : openMenu();
+                });
+                if (navClose) navClose.addEventListener('click', closeMenu);
+                if (navOverlay) navOverlay.addEventListener('click', closeMenu);
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape') closeMenu();
                 });
 
-                // Close the slide-in menu when clicking a real navigation link
+                // Close the drawer when clicking a real navigation link
                 // (ignore the Services dropdown toggle so it can expand on mobile).
-                navbar.querySelectorAll('ul li a:not(.dropbtn)').forEach(link => {
-                    link.addEventListener('click', function() {
-                        navbar.classList.remove('active');
-                        menuBtn.setAttribute('aria-expanded', 'false');
-                    });
+                navbar.querySelectorAll('a:not(.dropbtn)').forEach(link => {
+                    link.addEventListener('click', closeMenu);
                 });
+            }
+
+            // Highlight the current page in the nav
+            (function highlightActive() {
+                if (!navbar) return;
+                const path = location.pathname.replace(/\/+$/, '') || '/';
+                navbar.querySelectorAll('ul > li > a').forEach(a => {
+                    const href = a.getAttribute('href') || '';
+                    if (href.startsWith('#') || href.startsWith('tel:') || href.startsWith('mailto:')) return;
+                    let linkPath;
+                    try { linkPath = new URL(href, location.origin).pathname.replace(/\/+$/, '') || '/'; }
+                    catch (e) { return; }
+                    if (linkPath === path && !(linkPath === '/' && path !== '/')) {
+                        a.classList.add('active');
+                    }
+                });
+            })();
+
+            // Subtle shadow when the page is scrolled
+            const header = document.querySelector('header');
+            if (header) {
+                const onScroll = function() {
+                    header.classList.toggle('scrolled', window.scrollY > 20);
+                };
+                onScroll();
+                window.addEventListener('scroll', onScroll, { passive: true });
             }
 
             // Smooth scrolling for on-page anchor links (skip bare "#")
