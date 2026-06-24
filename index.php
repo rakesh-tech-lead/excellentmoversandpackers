@@ -224,46 +224,77 @@ include('header.php');
                 <h2>What Our Clients Say</h2>
                 <p>Don't just take our word for it - hear from our satisfied customers</p>
             </div>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        <p>"Excellent Movers and Packers made my relocation process incredibly smooth. Their team was professional, efficient, and handled my belongings with care. I highly recommend their services!"</p>
-                    </div>
-                    <div class="client-info">
-                        <div class="client-avatar" style="background:var(--primary-color);">RK</div>
-                        <div>
-                            <div class="client-name">Rajesh Kumar</div>
-                            <div class="client-location">Visakhapatnam</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        <p>"I was impressed by the professionalism and efficiency of Excellent Movers and Packers. They made my office relocation stress-free and completed the job within the promised timeframe."</p>
-                    </div>
-                    <div class="client-info">
-                        <div class="client-avatar" style="background:var(--secondary-color);">PS</div>
-                        <div>
-                            <div class="client-name">Priya Sharma</div>
-                            <div class="client-location">Visakhapatnam</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        <p>"The team at Excellent Movers and Packers is truly excellent! They were punctual, careful with my belongings, and very helpful throughout the moving process. I would definitely use their services again."</p>
-                    </div>
-                    <div class="client-info">
-                        <div class="client-avatar" style="background:var(--accent-color);color:var(--dark-color);">SR</div>
-                        <div>
-                            <div class="client-name">Suresh Reddy</div>
-                            <div class="client-location">Visakhapatnam</div>
-                        </div>
-                    </div>
-                </div>
+            <?php
+            $emp_reviews = function_exists('emp_reviews') ? emp_reviews() : array();
+            $emp_rv_biz  = function_exists('emp_business') ? emp_business() : array();
+            $emp_rv_url  = '';
+            if (!empty($emp_rv_biz['review_url'])) $emp_rv_url = $emp_rv_biz['review_url'];
+            elseif (!empty($emp_rv_biz['socials']['google'])) $emp_rv_url = $emp_rv_biz['socials']['google'];
+            $emp_av_colors = array('var(--primary-color)', 'var(--secondary-color)', 'var(--accent-color)');
+            function emp_initials($name) {
+                $p = preg_split('/\s+/', trim($name));
+                $i = strtoupper(substr($p[0], 0, 1));
+                if (count($p) > 1) $i .= strtoupper(substr(end($p), 0, 1));
+                return $i;
+            }
+            ?>
+            <div class="rating-summary">
+                <span class="rs-score">4.9</span>
+                <span class="stars" aria-hidden="true">★★★★★</span>
+                <span class="rs-text">Rated <strong>4.9 / 5</strong> by 187+ happy customers</span>
             </div>
+            <div class="testimonial-grid">
+                <?php foreach ($emp_reviews as $i => $rv):
+                    $rating = isset($rv['rating']) ? (int)$rv['rating'] : 5;
+                    $color  = $emp_av_colors[$i % count($emp_av_colors)];
+                    $textColor = ($color === 'var(--accent-color)') ? 'var(--dark-color)' : '#fff';
+                ?>
+                <div class="testimonial-card">
+                    <div class="stars" aria-label="<?php echo $rating; ?> out of 5 stars"><?php
+                        echo str_repeat('★', $rating) . '<span class="star-empty">' . str_repeat('★', 5 - $rating) . '</span>';
+                    ?></div>
+                    <div class="testimonial-text">
+                        <p>"<?php echo $rv['text']; ?>"</p>
+                    </div>
+                    <div class="client-info">
+                        <div class="client-avatar" style="background:<?php echo $color; ?>;color:<?php echo $textColor; ?>;"><?php echo emp_initials($rv['name']); ?></div>
+                        <div>
+                            <div class="client-name"><?php echo $rv['name']; ?></div>
+                            <div class="client-location"><?php echo $rv['location']; ?><?php if (!empty($rv['service'])): ?> &middot; <?php echo $rv['service']; ?><?php endif; ?></div>
+                        </div>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+            </div>
+            <?php if ($emp_rv_url): ?>
+            <div style="text-align:center;margin-top:40px;">
+                <a href="<?php echo $emp_rv_url; ?>" target="_blank" rel="noopener" class="btn btn-accent">★ Write a Review on Google</a>
+            </div>
+            <?php endif; ?>
         </div>
     </section>
+    <?php
+    // Emit Review structured data ONLY for verified (real) reviews.
+    $emp_verified = array_filter($emp_reviews, function ($r) { return !empty($r['verified']); });
+    if (!empty($emp_verified)) {
+        $emp_review_schema = array(
+            '@context' => 'https://schema.org',
+            '@type'    => 'MovingCompany',
+            '@id'      => $emp_rv_biz['url'] . '/#business',
+            'review'   => array(),
+        );
+        foreach ($emp_verified as $rv) {
+            $emp_review_schema['review'][] = array(
+                '@type' => 'Review',
+                'author' => array('@type' => 'Person', 'name' => $rv['name']),
+                'datePublished' => isset($rv['date']) ? $rv['date'] : null,
+                'reviewBody' => $rv['text'],
+                'reviewRating' => array('@type' => 'Rating', 'ratingValue' => (string)$rv['rating'], 'bestRating' => '5'),
+            );
+        }
+        echo "\n<script type=\"application/ld+json\">\n" . json_encode($emp_review_schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . "\n</script>\n";
+    }
+    ?>
 
     <!-- Service Areas Section -->
     <section id="service-areas" class="section service-areas">

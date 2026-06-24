@@ -1088,6 +1088,26 @@
     .fab { width: 50px; height: 50px; font-size: 1.4rem; }
 }
 
+/* ===== Reviews / star ratings ===== */
+.stars { color: var(--accent-color); letter-spacing: 2px; font-size: 1.1rem; line-height: 1; }
+.stars .star-empty { color: rgba(255, 255, 255, 0.3); }
+.testimonial-card .stars { margin-bottom: 14px; }
+
+.rating-summary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    margin: -20px 0 36px;
+    color: #fff;
+}
+.rating-summary .rs-score { font-size: 2.4rem; font-weight: 800; line-height: 1; }
+.rating-summary .stars { font-size: 1.5rem; }
+.rating-summary .rs-text { font-size: 1rem; color: rgba(255, 255, 255, 0.9); }
+/* On light review cards the empty stars need a darker tint */
+.testimonial-card .stars .star-empty { color: #d9dee6; }
+
 /* ===== Gallery ===== */
 .gallery-grid {
     display: grid;

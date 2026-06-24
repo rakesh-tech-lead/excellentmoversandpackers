@@ -302,6 +302,9 @@ function emp_business() {
         'country'   => 'IN',
         'lat'       => '17.6760',
         'lng'       => '83.1900',
+        // Google "write a review" link (from your Google Business Profile, e.g.
+        // https://g.page/r/XXXX/review). Leave '' to hide the review button.
+        'review_url' => '',
         // Public profiles used for schema sameAs + footer social icons.
         // Fill each URL once you create/claim the profile (leave '' to hide).
         // These off-site listings are exactly the "citations" that boost local ranking.
@@ -314,6 +317,30 @@ function emp_business() {
             'youtube'   => '',
             'linkedin'  => '',
         ),
+    );
+}
+
+/**
+ * Customer reviews / testimonials.
+ *
+ * IMPORTANT: The entries below are SAMPLE placeholders (verified => false).
+ * Replace them with your real customer reviews (e.g. copied from your Google
+ * Business Profile) and set 'verified' => true. Only verified reviews emit
+ * Review structured data — never publish fake reviews or fake Review schema.
+ *
+ * Fields: name, location, rating (1-5), text, service, date (Y-m-d), verified
+ */
+function emp_reviews() {
+    return array(
+        array('name' => 'Rajesh Kumar', 'location' => 'MVP Colony, Visakhapatnam', 'rating' => 5,
+            'text' => 'Excellent Movers and Packers made my relocation incredibly smooth. The team was professional, efficient and handled my belongings with great care. Highly recommended!',
+            'service' => 'Home Relocation', 'date' => '2026-05-12', 'verified' => false),
+        array('name' => 'Priya Sharma', 'location' => 'Madhurawada, Visakhapatnam', 'rating' => 5,
+            'text' => 'I was impressed by their professionalism and efficiency. They made my office relocation completely stress-free and finished within the promised timeframe.',
+            'service' => 'Office Relocation', 'date' => '2026-04-28', 'verified' => false),
+        array('name' => 'Suresh Reddy', 'location' => 'Gajuwaka, Visakhapatnam', 'rating' => 5,
+            'text' => 'Truly excellent service! Punctual, careful with my belongings and very helpful throughout the moving process. I would definitely use their services again.',
+            'service' => 'Packing & Moving', 'date' => '2026-04-10', 'verified' => false),
     );
 }
 
