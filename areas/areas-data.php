@@ -302,7 +302,26 @@ function emp_business() {
         'country'   => 'IN',
         'lat'       => '17.6760',
         'lng'       => '83.1900',
+        // Public profiles used for schema sameAs + footer social icons.
+        // Fill each URL once you create/claim the profile (leave '' to hide).
+        // These off-site listings are exactly the "citations" that boost local ranking.
+        'socials'   => array(
+            'google'    => '', // Google Business Profile share link (https://g.page/...)
+            'facebook'  => '',
+            'instagram' => '',
+            'justdial'  => '',
+            'sulekha'   => '',
+            'youtube'   => '',
+            'linkedin'  => '',
+        ),
     );
+}
+
+/** Non-empty social/citation profile URLs (for schema sameAs and footer links). */
+function emp_social_links() {
+    $biz = emp_business();
+    $socials = isset($biz['socials']) ? $biz['socials'] : array();
+    return array_filter($socials, function ($u) { return !empty($u); });
 }
 
 /**

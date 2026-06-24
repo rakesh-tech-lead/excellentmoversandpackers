@@ -1,4 +1,9 @@
-<?php include('header.php') ?>
+<?php
+$title       = "Best Packers and Movers in Visakhapatnam | Excellent Movers and Packers";
+$description = "Excellent Movers and Packers is the best packers and movers in Visakhapatnam (Vizag). Affordable, safe home & office relocation, packing, storage and vehicle transport. Call +91 82955 88602 for a free quote.";
+$canonical   = "https://excellentmoversandpackers.com/";
+include('header.php');
+?>
 <?php include('css.php') ?>
 <?php include('navigation.php') ?>
 

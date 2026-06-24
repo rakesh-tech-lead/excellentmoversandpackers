@@ -20,6 +20,11 @@ $canonical = isset($canonical) ? $canonical : null;          // Optional per-pag
     <meta name="author" content="Excellent Movers and Packers">
     <?php if ($canonical): ?><link rel="canonical" href="<?php echo $canonical; ?>"><?php endif; ?>
 
+    <!-- Favicon / touch icon -->
+    <link rel="icon" type="image/png" href="/excellent_movers_packers.png">
+    <link rel="apple-touch-icon" href="/excellent_movers_packers.png">
+    <meta name="theme-color" content="#0056b3">
+
     <!-- Local SEO geo meta -->
     <meta name="geo.region" content="IN-AP">
     <meta name="geo.placename" content="Visakhapatnam">
@@ -78,8 +83,24 @@ $canonical = isset($canonical) ? $canonical : null;          // Optional per-pag
             array('@type' => 'OpeningHoursSpecification', 'dayOfWeek' => 'Sunday', 'opens' => '09:00', 'closes' => '17:00'),
         ),
         'aggregateRating' => array('@type' => 'AggregateRating', 'ratingValue' => '4.9', 'reviewCount' => '187'),
-        'sameAs' => array($emp_biz['url']),
+        'sameAs' => array_values(array_merge(array($emp_biz['url']), array_values(emp_social_links()))),
     );
     echo json_encode($emp_site_schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+    ?>
+    </script>
+
+    <!-- WebSite schema (brand entity) -->
+    <script type="application/ld+json">
+    <?php
+    $emp_website_schema = array(
+        '@context' => 'https://schema.org',
+        '@type'    => 'WebSite',
+        '@id'      => $emp_biz['url'] . '/#website',
+        'name'     => $emp_biz['name'],
+        'alternateName' => 'Excellent Packers and Movers Visakhapatnam',
+        'url'      => $emp_biz['url'],
+        'publisher'=> array('@id' => $emp_biz['url'] . '/#business'),
+    );
+    echo json_encode($emp_website_schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
     ?>
     </script>

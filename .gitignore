@@ -1,0 +1,14 @@
+# Archives / backups
+*.zip
+*.tar
+*.tar.gz
+*.bak
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+*.swp
+
+# Local temp / capture helpers
+_cap.html
+_gen_*.php

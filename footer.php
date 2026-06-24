@@ -10,11 +10,15 @@
 						<img src="/excellent_movers_packers.png" alt="Excellent Movers & Packers Logo" style="scale:1;">
 					</div>
                     <p>Professional moving and packing services in Visakhapatnam, Andhra Pradesh. We make your relocation stress-free and efficient.</p>
+                    <?php
+                    $emp_socials = function_exists('emp_social_links') ? emp_social_links() : array();
+                    $emp_social_labels = array('google'=>'Google','facebook'=>'Facebook','instagram'=>'Instagram','justdial'=>'JustDial','sulekha'=>'Sulekha','youtube'=>'YouTube','linkedin'=>'LinkedIn');
+                    ?>
                     <div class="social-links">
-                        <a href="#" aria-label="Facebook">f</a>
-                        <a href="#" aria-label="Twitter">t</a>
-                        <a href="#" aria-label="Instagram">i</a>
-                        <a href="#" aria-label="LinkedIn">l</a>
+                        <a href="https://wa.me/918295588602" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
+                        <?php foreach ($emp_socials as $emp_sk => $emp_su): ?>
+                        <a href="<?php echo $emp_su; ?>" target="_blank" rel="noopener" aria-label="<?php echo isset($emp_social_labels[$emp_sk]) ? $emp_social_labels[$emp_sk] : $emp_sk; ?>"><?php echo strtoupper(substr($emp_sk, 0, 2)); ?></a>
+                        <?php endforeach; ?>
                     </div>
                 </div>
                 <div class="footer-col">

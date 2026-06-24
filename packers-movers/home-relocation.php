@@ -3,6 +3,7 @@
 $title = "Home Relocation Services | Excellent Movers and Packers Visakhapatnam";
 $description = "Professional home relocation services in Visakhapatnam. Excellent Movers and Packers offers stress-free residential moving with packing, transportation, and setup services.";
 $keywords = "home relocation Visakhapatnam, residential moving services, house shifting Vizag, apartment moving, villa relocation, home movers";
+$canonical = "https://excellentmoversandpackers.com/packers-movers/home-relocation.php";
 
 
 include('../header.php') 

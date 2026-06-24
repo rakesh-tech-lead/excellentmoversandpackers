@@ -3,6 +3,7 @@
 $title = "Office Relocation Services | Excellent Movers and Packers Visakhapatnam";
 $description = "Professional office relocation services in Visakhapatnam. Excellent Movers and Packers offers seamless business moving with minimal downtime and disruption.";
 $keywords = "office relocation Visakhapatnam, commercial moving services, business relocation Vizag, corporate moving, office shifting, business movers";
+$canonical = "https://excellentmoversandpackers.com/packers-movers/office-relocation.php";
 
 
 include('../header.php') 

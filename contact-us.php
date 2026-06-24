@@ -1,9 +1,10 @@
 <?php 
 
-$title = "Contact Excellent Movers and Packers in Visakhapatnam for professional moving, packing, and relocation services. Get a free quote today!";
-$keywords = "contact movers Visakhapatnam, moving company contact, packers contact Vizag, relocation services contact, moving quote Visakhapatnam";
 $title = "Contact Us | Excellent Movers and Packers Visakhapatnam";
-include('header.php') 
+$description = "Contact Excellent Movers and Packers in Visakhapatnam for professional moving, packing and relocation services. Call +91 82955 88602 or send us a message for a free quote today.";
+$keywords = "contact movers Visakhapatnam, moving company contact, packers contact Vizag, relocation services contact, moving quote Visakhapatnam";
+$canonical = "https://excellentmoversandpackers.com/contact-us.php";
+include('header.php')
 ?>
 <?php include('css.php') ?>
 <style>

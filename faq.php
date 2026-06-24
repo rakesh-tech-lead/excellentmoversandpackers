@@ -3,9 +3,10 @@
 $title = "Frequently Asked Questions | Excellent Movers and Packers Visakhapatnam";
 $description = "Frequently Asked Questions about moving and packing services in Visakhapatnam. Get answers to common questions about relocation, packing, pricing, and more from Excellent Movers and Packers.";
 $keywords = "movers and packers FAQ, Visakhapatnam moving services, relocation questions, packing services Visakhapatnam, moving cost Vizag, best movers Visakhapatnam, home shifting FAQ";
+$canonical = "https://excellentmoversandpackers.com/faq.php";
 
 
-include('header.php') 
+include('header.php')
 ?>
 <?php include('css.php') ?>
 <style>
@@ -26,11 +27,11 @@ include('header.php')
     <section class="faq-section">
         <div class="container">
             <div class="faq-intro">
-                <h1>Frequently Asked Questions</h1>
-                <p>Find answers to the most common questions about our moving and packing services in Visakhapatnam. If you don't see your question here, please feel free to <a href="index.html#contact">contact us</a>.</p>
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to the most common questions about our moving and packing services in Visakhapatnam. If you don't see your question here, please feel free to <a href="/contact-us.php">contact us</a>.</p>
             </div>
 
-            <div class="faq-container">
+            <div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
                 <div class="faq-category">
                     <h3>General Questions</h3>
                     <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">

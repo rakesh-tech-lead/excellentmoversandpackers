@@ -3,6 +3,7 @@
 $title = "Furniture Assembly Services | Excellent Movers and Packers Visakhapatnam";
 $description = "Professional furniture assembly and disassembly services in Visakhapatnam. Excellent Movers and Packers ensures your furniture is safely taken apart, transported, and reassembled at your new location.";
 $keywords = "furniture assembly Visakhapatnam, furniture disassembly, furniture installation, furniture setup, furniture reassembly, moving furniture";
+$canonical = "https://excellentmoversandpackers.com/packers-movers/furniture-assembly.php";
 
 
 include('../header.php') 
