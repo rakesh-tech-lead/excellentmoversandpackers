@@ -139,6 +139,60 @@
                 });
             }
 
+            // Exit-intent / moving-tips offer popup
+            const popup = document.getElementById('empPopup');
+            const skipPopup = /\/(contact-us|cost-calculator)\.php$/.test(location.pathname);
+            if (popup && !skipPopup) {
+                const KEY = 'emp_popup_seen';
+                const lastSeen = () => { try { return parseInt(localStorage.getItem(KEY) || '0', 10); } catch (e) { return Date.now(); } };
+                const markSeen = () => { try { localStorage.setItem(KEY, String(Date.now())); } catch (e) {} };
+                const recentlySeen = () => (Date.now() - lastSeen()) < 3 * 24 * 60 * 60 * 1000; // 3 days
+                let shown = false;
+
+                const openPopup = () => {
+                    if (shown || recentlySeen()) return;
+                    if (document.body.classList.contains('menu-open')) return; // don't clash with menu/lightbox
+                    shown = true;
+                    popup.classList.add('open');
+                    popup.setAttribute('aria-hidden', 'false');
+                    document.body.classList.add('menu-open');
+                };
+                const closePopup = () => {
+                    popup.classList.remove('open');
+                    popup.setAttribute('aria-hidden', 'true');
+                    document.body.classList.remove('menu-open');
+                    markSeen();
+                };
+
+                popup.querySelector('.emp-popup-close').addEventListener('click', closePopup);
+                popup.addEventListener('click', (e) => { if (e.target === popup) closePopup(); });
+                document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && popup.classList.contains('open')) closePopup(); });
+                const ckLink = popup.querySelector('.emp-popup-link');
+                if (ckLink) ckLink.addEventListener('click', markSeen);
+
+                const isTouch = window.matchMedia('(hover: none)').matches || 'ontouchstart' in window;
+                if (isTouch) {
+                    // mobile has no exit-intent: show after a delay
+                    setTimeout(openPopup, 30000);
+                } else {
+                    // desktop: trigger when the cursor leaves via the top of the viewport
+                    document.addEventListener('mouseout', (e) => {
+                        if (e.clientY <= 0 && !e.relatedTarget) openPopup();
+                    });
+                    setTimeout(openPopup, 60000); // safety fallback
+                }
+
+                const pForm = document.getElementById('empPopupForm');
+                if (pForm) pForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    if (!pForm.checkValidity()) { pForm.reportValidity(); return; }
+                    const phone = document.getElementById('empPopupPhone').value.trim();
+                    const msg = "Hi, I'd like a free moving quote.\nMy phone: " + phone;
+                    window.open("https://wa.me/918295588602?text=" + encodeURIComponent(msg), "_blank");
+                    closePopup();
+                });
+            }
+
             // Cost calculator
             const calcForm = document.getElementById('calcForm');
             if (calcForm) {

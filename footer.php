@@ -91,3 +91,19 @@
         <a class="mc-quote" href="https://wa.me/918295588602?text=Hi%2C%20I%20need%20a%20free%20quote." target="_blank" rel="noopener">
             <svg viewBox="0 0 32 32" width="18" height="18" fill="currentColor" aria-hidden="true" style="vertical-align:-3px;"><path d="M16.04 4C9.96 4 5.02 8.94 5.02 15.02c0 1.94.51 3.84 1.48 5.51L4.93 28l7.66-1.55a11 11 0 0 0 5.43 1.42h.01c6.08 0 11.02-4.94 11.02-11.02C29.05 8.94 24.12 4 16.04 4zm6.46 15.74c-.27.76-1.6 1.46-2.2 1.52-.59.06-1.13.27-3.8-.8-3.21-1.27-5.25-4.57-5.41-4.78-.16-.21-1.3-1.72-1.3-3.28s.82-2.33 1.11-2.65c.29-.32.63-.4.84-.4.21 0 .42 0 .6.01.19.01.45-.07.7.54.27.65.92 2.25 1 2.41.08.16.13.35.02.56-.11.21-.16.35-.32.54-.16.19-.34.42-.48.56-.16.16-.33.33-.14.65.19.32.84 1.39 1.81 2.25 1.24 1.11 2.29 1.45 2.61 1.61.32.16.51.13.7-.08.19-.21.81-.94 1.03-1.27.21-.32.43-.27.72-.16.29.11 1.85.87 2.17 1.03.32.16.53.24.6.37.08.14.08.74-.19 1.5z"/></svg> Free Quote</a>
     </div>
+
+    <!-- Exit-intent / moving-tips offer popup -->
+    <div class="emp-popup" id="empPopup" aria-hidden="true">
+        <div class="emp-popup-box" role="dialog" aria-modal="true" aria-labelledby="empPopupTitle">
+            <button class="emp-popup-close" aria-label="Close">&times;</button>
+            <div class="emp-popup-icon">📦</div>
+            <h3 id="empPopupTitle">Planning a Move? Get a Free Quote!</h3>
+            <p>Leave your number for a quick, no-obligation quote on WhatsApp — plus grab our free room-by-room moving checklist.</p>
+            <form id="empPopupForm" class="emp-popup-form" novalidate>
+                <input type="tel" id="empPopupPhone" inputmode="tel" placeholder="Your phone number" required>
+                <button type="submit" class="btn btn-whatsapp">💬 Get My Free Quote</button>
+            </form>
+            <a class="emp-popup-link" href="/blog/moving-checklist-visakhapatnam">Or read our free Moving Checklist →</a>
+            <p class="emp-popup-fine">No spam. We'll reply on WhatsApp.</p>
+        </div>
+    </div>

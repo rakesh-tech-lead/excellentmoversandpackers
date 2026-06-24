@@ -1088,6 +1088,45 @@
     .fab { width: 50px; height: 50px; font-size: 1.4rem; }
 }
 
+/* ===== Exit-intent / offer popup ===== */
+.emp-popup {
+    position: fixed; inset: 0; z-index: 2100;
+    background: rgba(15, 23, 42, 0.6);
+    display: none; align-items: center; justify-content: center;
+    padding: 20px;
+}
+.emp-popup.open { display: flex; }
+.emp-popup-box {
+    background: var(--white);
+    border-radius: 16px;
+    max-width: 420px; width: 100%;
+    padding: 36px 28px 28px;
+    text-align: center;
+    position: relative;
+    box-shadow: var(--shadow-lg);
+    animation: empPopIn 0.3s ease;
+}
+@keyframes empPopIn { from { opacity: 0; transform: translateY(18px) scale(0.97); } to { opacity: 1; transform: none; } }
+.emp-popup-close {
+    position: absolute; top: 10px; right: 14px;
+    background: none; border: none; font-size: 1.8rem; line-height: 1;
+    color: var(--muted); cursor: pointer;
+}
+.emp-popup-close:hover { color: var(--dark-color); }
+.emp-popup-icon { font-size: 2.6rem; margin-bottom: 6px; }
+.emp-popup-box h3 { color: var(--primary-color); font-size: 1.4rem; margin-bottom: 8px; }
+.emp-popup-box p { color: var(--muted); font-size: 0.98rem; margin-bottom: 18px; }
+.emp-popup-form { display: flex; flex-direction: column; gap: 10px; }
+.emp-popup-form input {
+    width: 100%; padding: 12px 15px; border: 1px solid var(--border);
+    border-radius: 8px; font-size: 1rem;
+}
+.emp-popup-form input:focus { outline: none; border-color: var(--primary-color); }
+.emp-popup-form .btn { width: 100%; }
+.emp-popup-link { display: inline-block; margin-top: 16px; font-weight: 700; color: var(--primary-color); }
+.emp-popup-link:hover { color: var(--secondary-color); }
+.emp-popup-fine { font-size: 0.78rem; color: var(--muted); margin: 12px 0 0; }
+
 /* ===== Trust badges strip ===== */
 .trust-badges { background: var(--white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .trust-badges .tb-inner {
