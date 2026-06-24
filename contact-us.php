@@ -338,12 +338,12 @@ include('header.php')
             <div class="contact-container">
                 <div class="contact-form-container">
                     <div class="success-message" id="successMessage">
-                        Thank you for contacting Excellent Movers and Packers! Your message has been sent successfully. We'll get back to you shortly.
+                        Opening WhatsApp with your enquiry details… If it doesn't open automatically, please call us at +91 82955 88602.
                     </div>
-                    
+
                     <div class="contact-form">
-                        <h3>Send Us a Message</h3>
-                        <form id="contactForm" action="send-email.php" method="POST">
+                        <h3>Get a Free Quote</h3>
+                        <form id="contactForm" action="#" method="POST" novalidate>
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="name">Full Name*</label>
@@ -401,7 +401,7 @@ include('header.php')
                                 <div class="error-message" id="messageError">Please provide some details about your move</div>
                             </div>
                             
-                            <button type="submit" class="btn btn-block">Submit Enquiry</button>
+                            <button type="submit" class="btn btn-block" style="background:#25d366;border-color:#25d366;color:#fff;">💬 Send on WhatsApp</button>
                         </form>
                     </div>
                 </div>
@@ -462,5 +462,31 @@ include('header.php')
         </div>
     </section>
 
+<script>
+(function () {
+    var form = document.getElementById('contactForm');
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!form.checkValidity()) { form.reportValidity(); return; }
+        var g = function (id) { var el = document.getElementById(id); return el ? el.value.trim() : ''; };
+        var typeSel = document.getElementById('moveType');
+        var moveType = typeSel && typeSel.value ? typeSel.value : '';
+        var text = "Hi, I'd like a free moving quote.\n\n"
+            + "Name: " + g('name') + "\n"
+            + "Phone: " + g('phone') + "\n"
+            + (g('email') ? "Email: " + g('email') + "\n" : "")
+            + "Move Type: " + moveType + "\n"
+            + "From: " + g('moveFrom') + "\n"
+            + "To: " + g('moveTo') + "\n"
+            + (g('moveDate') ? "Preferred Date: " + g('moveDate') + "\n" : "")
+            + "Details: " + g('message');
+        window.open("https://wa.me/918295588602?text=" + encodeURIComponent(text), "_blank");
+        var sm = document.getElementById('successMessage');
+        if (sm) { sm.style.display = 'block'; sm.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+        form.reset();
+    });
+})();
+</script>
 <?php include('footer.php') ?>
 <?php include('js.php') ?>
