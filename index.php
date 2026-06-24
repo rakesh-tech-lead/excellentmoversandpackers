@@ -289,6 +289,33 @@ include('header.php');
         </div>
     </section>
 
+    <!-- Gallery / Our Work -->
+    <section id="gallery" class="section">
+        <div class="container">
+            <div class="section-title">
+                <span class="eyebrow">Gallery</span>
+                <h2>Our Work in Pictures</h2>
+                <p>A glimpse of our team handling real moves across Visakhapatnam</p>
+            </div>
+            <div class="gallery-grid">
+                <?php
+                $emp_gallery_imgs = function_exists('emp_gallery') ? emp_gallery() : array();
+                $emp_gc = 0;
+                foreach ($emp_gallery_imgs as $emp_g):
+                    if ($emp_gc++ >= 6) break; ?>
+                    <div class="gallery-item">
+                        <img src="<?php echo $emp_g['src']; ?>" alt="<?php echo $emp_g['caption']; ?>" loading="lazy">
+                        <span class="g-zoom">&#128269;</span>
+                        <div class="g-cap"><?php echo $emp_g['caption']; ?></div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+            <div style="text-align:center;margin-top:35px;">
+                <a href="/gallery.php" class="btn">View Full Gallery</a>
+            </div>
+        </div>
+    </section>
+
     <!-- From Our Blog -->
     <section class="section">
         <div class="container">

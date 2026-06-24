@@ -132,5 +132,6 @@
 - [Blog](https://excellentmoversandpackers.com/blog/)
 - [About Us](https://excellentmoversandpackers.com/about.php)
 - [Why Choose Us](https://excellentmoversandpackers.com/why-us.php)
+- [Gallery](https://excellentmoversandpackers.com/gallery.php)
 - [FAQ](https://excellentmoversandpackers.com/faq.php)
 - [Contact Us](https://excellentmoversandpackers.com/contact-us.php)

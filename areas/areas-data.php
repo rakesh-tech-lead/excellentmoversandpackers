@@ -317,6 +317,21 @@ function emp_business() {
     );
 }
 
+/** Gallery images (our work) reused by the homepage section and gallery page. */
+function emp_gallery() {
+    return array(
+        array('src' => '/excellent-Home-Relocation.jpeg', 'caption' => 'Home Relocation'),
+        array('src' => '/Excellent-Office-Relocation.jpeg', 'caption' => 'Office Relocation'),
+        array('src' => '/Excellent-Packing-and-Unpacking.jpeg', 'caption' => 'Professional Packing'),
+        array('src' => '/Excellent-Furniture-Assembly.jpeg', 'caption' => 'Furniture Assembly'),
+        array('src' => '/Excellent-Storage-Solutions.jpeg', 'caption' => 'Storage Solutions'),
+        array('src' => '/Excellent-Vehicle-Transportation.jpeg', 'caption' => 'Vehicle Transportation'),
+        array('src' => '/best-packers-and-movers-in-visakhapatnam.jpeg', 'caption' => 'Our Team at Work'),
+        array('src' => '/safe-packers-and-movers-in-visakhapatnam.jpeg', 'caption' => 'Safe &amp; Secure Moves'),
+        array('src' => '/Excellent-Professional-Moving-and-Packing-Services-in-Visakhapatnam.jpeg', 'caption' => 'Professional Moving Services'),
+    );
+}
+
 /** Non-empty social/citation profile URLs (for schema sameAs and footer links). */
 function emp_social_links() {
     $biz = emp_business();

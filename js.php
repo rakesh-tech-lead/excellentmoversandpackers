@@ -111,6 +111,45 @@
 
                 counters.forEach(c => observer.observe(c));
             }
+
+            // Gallery lightbox
+            const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
+            if (galleryItems.length) {
+                const lb = document.createElement('div');
+                lb.className = 'lightbox';
+                lb.innerHTML =
+                    '<button class="lb-btn lb-close" aria-label="Close">&times;</button>' +
+                    '<button class="lb-btn lb-prev" aria-label="Previous">&#10094;</button>' +
+                    '<img alt="">' +
+                    '<button class="lb-btn lb-next" aria-label="Next">&#10095;</button>' +
+                    '<div class="lb-cap"></div>';
+                document.body.appendChild(lb);
+                const lbImg = lb.querySelector('img');
+                const lbCap = lb.querySelector('.lb-cap');
+                const imgs = galleryItems.map(it => {
+                    const i = it.querySelector('img');
+                    return { src: i.getAttribute('src'), cap: i.getAttribute('alt') || '' };
+                });
+                let idx = 0;
+                const show = (i) => {
+                    idx = (i + imgs.length) % imgs.length;
+                    lbImg.src = imgs[idx].src;
+                    lbCap.textContent = imgs[idx].cap;
+                };
+                const openLb = (i) => { show(i); lb.classList.add('open'); document.body.classList.add('menu-open'); };
+                const closeLb = () => { lb.classList.remove('open'); document.body.classList.remove('menu-open'); };
+                galleryItems.forEach((it, i) => it.addEventListener('click', () => openLb(i)));
+                lb.querySelector('.lb-close').addEventListener('click', closeLb);
+                lb.querySelector('.lb-prev').addEventListener('click', (e) => { e.stopPropagation(); show(idx - 1); });
+                lb.querySelector('.lb-next').addEventListener('click', (e) => { e.stopPropagation(); show(idx + 1); });
+                lb.addEventListener('click', (e) => { if (e.target === lb) closeLb(); });
+                document.addEventListener('keydown', (e) => {
+                    if (!lb.classList.contains('open')) return;
+                    if (e.key === 'Escape') closeLb();
+                    else if (e.key === 'ArrowLeft') show(idx - 1);
+                    else if (e.key === 'ArrowRight') show(idx + 1);
+                });
+            }
         });
     </script>
 </body>

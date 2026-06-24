@@ -29,6 +29,7 @@
                         <li><a href="/about.php">About Us</a></li>
                         <li><a href="/why-us.php">Why Choose Us</a></li>
                         <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="/gallery.php">Gallery</a></li>
                         <li><a href="/blog/">Blog</a></li>
                         <li><a href="#contact">Contact Us</a></li>
                     </ul>
