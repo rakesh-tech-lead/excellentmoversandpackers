@@ -112,6 +112,33 @@
                 counters.forEach(c => observer.observe(c));
             }
 
+            // Quote form -> submit via WhatsApp with details prefilled
+            const quoteForm = document.getElementById('quoteForm');
+            if (quoteForm) {
+                quoteForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    if (!quoteForm.checkValidity()) { quoteForm.reportValidity(); return; }
+                    const v = id => { const el = document.getElementById(id); return el ? el.value.trim() : ''; };
+                    const serviceSel = document.getElementById('qfService');
+                    const service = serviceSel && serviceSel.selectedIndex > 0 ? serviceSel.options[serviceSel.selectedIndex].text : '';
+                    const name = v('qfName'), phone = v('qfPhone'), email = v('qfEmail'), message = v('qfMessage');
+
+                    let text = "Hi, I'd like a free moving quote.\n\n";
+                    text += "Name: " + name + "\n";
+                    text += "Phone: " + phone + "\n";
+                    if (email) text += "Email: " + email + "\n";
+                    text += "Service: " + service + "\n";
+                    text += "Details: " + message;
+
+                    const url = "https://wa.me/918295588602?text=" + encodeURIComponent(text);
+                    window.open(url, "_blank");
+
+                    const note = document.getElementById('qfNote');
+                    if (note) note.textContent = "Opening WhatsApp… if it doesn't open, please call us at +91 82955 88602.";
+                    quoteForm.reset();
+                });
+            }
+
             // Gallery lightbox
             const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
             if (galleryItems.length) {

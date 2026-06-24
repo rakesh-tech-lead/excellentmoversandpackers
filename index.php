@@ -425,32 +425,35 @@ include('header.php');
                     </div>
                 </div>
                 <div class="contact-form">
-                    <h3>Send Us a Message</h3>
-                    <form action="#" method="POST">
+                    <h3>Get a Free Quote</h3>
+                    <p style="margin-top:-6px;margin-bottom:18px;color:var(--muted);font-size:0.95rem;">Fill this in and we'll reply on WhatsApp with your free, no-obligation quote.</p>
+                    <form id="quoteForm" action="#" method="POST" novalidate>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Name" required>
+                            <input type="text" id="qfName" name="name" class="form-control" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Your Email" required>
+                            <input type="tel" id="qfPhone" name="phone" class="form-control" placeholder="Your Phone" required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" class="form-control" placeholder="Your Phone" required>
+                            <input type="email" id="qfEmail" name="email" class="form-control" placeholder="Your Email (optional)">
                         </div>
                         <div class="form-group">
-                            <select class="form-control" required>
+                            <select id="qfService" name="service" class="form-control" required>
                                 <option value="" disabled selected>Select Service</option>
-                                <option value="home-relocation">Home Relocation</option>
-                                <option value="office-relocation">Office Relocation</option>
-                                <option value="packing-unpacking">Packing & Unpacking</option>
-                                <option value="furniture-assembly">Furniture Assembly</option>
-                                <option value="storage">Storage Solutions</option>
-                                <option value="vehicle-transport">Vehicle Transportation</option>
+                                <option value="Home Relocation">Home Relocation</option>
+                                <option value="Office Relocation">Office Relocation</option>
+                                <option value="Packing &amp; Unpacking">Packing &amp; Unpacking</option>
+                                <option value="Furniture Assembly">Furniture Assembly</option>
+                                <option value="Storage Solutions">Storage Solutions</option>
+                                <option value="Vehicle Transportation">Vehicle Transportation</option>
+                                <option value="Inter-State / Other">Inter-State / Other</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" placeholder="Your Message" required></textarea>
+                            <textarea id="qfMessage" name="message" class="form-control" placeholder="Tell us about your move — moving from, moving to, preferred date and items" required></textarea>
                         </div>
-                        <button type="submit" class="btn">Send Message</button>
+                        <button type="submit" class="btn btn-whatsapp">💬 Send on WhatsApp</button>
+                        <p class="form-note" id="qfNote" role="status" aria-live="polite"></p>
                     </form>
                 </div>
             </div>

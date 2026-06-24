@@ -1088,6 +1088,10 @@
     .fab { width: 50px; height: 50px; font-size: 1.4rem; }
 }
 
+/* Contact / quote form status note */
+.form-note { margin-top: 12px; margin-bottom: 0; font-size: 0.92rem; font-weight: 600; color: var(--secondary-color); min-height: 1em; }
+.contact-form .btn-whatsapp { width: 100%; }
+
 /* ===== Reviews / star ratings ===== */
 .stars { color: var(--accent-color); letter-spacing: 2px; font-size: 1.1rem; line-height: 1; }
 .stars .star-empty { color: rgba(255, 255, 255, 0.3); }
