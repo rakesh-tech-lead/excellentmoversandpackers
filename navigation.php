@@ -13,10 +13,18 @@
 
 #navbar a {
     display: block;
-    padding: 10px 14px;
+    padding: 10px 12px;
     text-decoration: none;
     color: var(--dark-color);
     font-weight: 600;
+    white-space: nowrap;
+}
+
+/* Slightly tighten the desktop nav on mid-size screens so all items fit on one line */
+@media (min-width: 769px) and (max-width: 1200px) {
+    #navbar a { padding: 10px 9px; font-size: 0.95rem; }
+    .header-cta { margin-left: 14px; padding: 9px 14px; }
+    .logo img { height: 50px; }
 }
 
 #navbar > ul > li > a:not(.header-cta) {
@@ -27,7 +35,7 @@
     content: '';
     position: absolute;
     bottom: 2px;
-    left: 14px;
+    left: 12px;
     width: 0;
     height: 2px;
     background: var(--secondary-color);
@@ -35,7 +43,7 @@
 }
 
 #navbar > ul > li > a:not(.header-cta):hover:after {
-    width: calc(100% - 28px);
+    width: calc(100% - 24px);
 }
 
 /* Dropdown menu styling */
@@ -143,6 +151,7 @@ $emp_email      = 'excellentmoversandpackers68@gmail.com';
                         </div>
                     </li>
                     <li><a href="https://excellentmoversandpackers.com/areas/">Areas We Serve</a></li>
+                    <li><a href="https://excellentmoversandpackers.com/states/">States We Serve</a></li>
                     <li><a href="/#about">About</a></li>
                     <li><a href="/#why-us">Why Us</a></li>
                     <li><a href="https://excellentmoversandpackers.com/faq.php">FAQ</a></li>
