@@ -8,13 +8,22 @@
         
         :root {
             --primary-color: #0056b3;
+            --primary-dark: #003d80;
             --secondary-color: #00a86b;
+            --secondary-dark: #008857;
             --accent-color: #ffc107;
-            --dark-color: #333;
-            --light-color: #f8f9fa;
-            --text-color: #444;
+            --whatsapp: #25d366;
+            --dark-color: #1f2733;
+            --light-color: #f4f7fb;
+            --text-color: #4a5568;
+            --muted: #718096;
             --white: #fff;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --border: #e2e8f0;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 20px 45px rgba(0, 0, 0, 0.12);
+            --primary-gradient: linear-gradient(135deg, #0056b3, #0072e8);
+            --radius: 14px;
             --transition: all 0.3s ease;
         }
         
@@ -79,33 +88,67 @@
         }
         
         .btn {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
             background: var(--primary-color);
             color: var(--white);
-            padding: 12px 25px;
-            border: none;
-            border-radius: 5px;
+            padding: 13px 28px;
+            border: 2px solid transparent;
+            border-radius: 8px;
             cursor: pointer;
             transition: var(--transition);
             font-weight: 600;
             text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            line-height: 1.2;
         }
-        
+
         .btn:hover {
-            background: var(--secondary-color);
+            background: var(--primary-dark);
             color: var(--white);
             transform: translateY(-3px);
-            box-shadow: var(--shadow);
+            box-shadow: var(--shadow-md);
         }
-        
+
         .btn-secondary {
             background: var(--secondary-color);
         }
-        
+
         .btn-secondary:hover {
-            background: var(--primary-color);
+            background: var(--secondary-dark);
+        }
+
+        .btn-accent {
+            background: var(--accent-color);
+            color: var(--dark-color);
+        }
+
+        .btn-accent:hover {
+            background: #e6ac00;
+            color: var(--dark-color);
+        }
+
+        .btn-whatsapp {
+            background: var(--whatsapp);
+        }
+
+        .btn-whatsapp:hover {
+            background: #1da851;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border-color: rgba(255, 255, 255, 0.7);
+            color: var(--white);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary-color);
+            border-color: var(--white);
         }
         
         .text-center {
@@ -130,13 +173,14 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            padding: 15px 0;
         }
-        
+
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding-top: 12px;
+            padding-bottom: 12px;
         }
         
         .logo {
@@ -195,29 +239,84 @@
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/Excellent-Professional-Moving-and-Packing-Services-in-Visakhapatnam.jpeg?height=800&width=1600') no-repeat center center/cover;
-            height: 100vh;
+            background: linear-gradient(rgba(13, 27, 51, 0.78), rgba(13, 27, 51, 0.85)), url('/Excellent-Professional-Moving-and-Packing-Services-in-Visakhapatnam.jpeg?height=800&width=1600') no-repeat center center/cover;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             text-align: center;
             color: var(--white);
-            margin-top: 70px;
+            margin-top: 122px;
+            padding: 60px 0;
         }
-        
+
         .hero-content {
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
         }
-        
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            color: #fff;
+            padding: 7px 18px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 22px;
+            backdrop-filter: blur(6px);
+        }
+
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3.4rem;
+            line-height: 1.18;
             margin-bottom: 20px;
             color: var(--white);
         }
-        
+
+        .hero h1 .accent {
+            color: var(--accent-color);
+        }
+
         .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
+            font-size: 1.18rem;
+            margin-bottom: 32px;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 680px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .hero-trust {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px 28px;
+            margin-top: 34px;
+            color: rgba(255, 255, 255, 0.92);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .hero-trust span {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .hero-trust .tick {
+            color: var(--secondary-color);
+            font-weight: 700;
         }
         
         /* Services Section */
@@ -357,6 +456,22 @@
             border-radius: 50%;
             overflow: hidden;
             margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .client-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: #fff;
+            background: var(--secondary-color);
         }
         
         .client-name {
@@ -630,10 +745,347 @@
     .logo img {
         height: 40px;
     }
-    
+
     .footer-logo img {
         height: 60px;
     }
+}
+
+/* ============================================================
+   UI ENHANCEMENTS — top bar, header CTA, stats, process,
+   floating action buttons, and responsive refinements
+   ============================================================ */
+
+/* Top contact bar (desktop + tablet) */
+.top-bar {
+    background: var(--dark-color);
+    color: #dfe6f0;
+    font-size: 0.88rem;
+}
+
+.top-bar .top-bar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 9px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.top-bar .top-contacts {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+
+.top-bar a,
+.top-bar span {
+    color: #dfe6f0;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.top-bar a:hover {
+    color: var(--accent-color);
+}
+
+.top-bar .top-social {
+    display: flex;
+    gap: 14px;
+}
+
+/* Header CTA button (desktop) */
+.header-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--secondary-color);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 700;
+    white-space: nowrap;
+    margin-left: 25px;
+}
+
+.header-cta:hover {
+    background: var(--secondary-dark);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+}
+
+/* Section eyebrow label */
+.section-title .eyebrow {
+    display: inline-block;
+    color: var(--secondary-color);
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 0.82rem;
+    margin-bottom: 8px;
+}
+
+.section-title p {
+    max-width: 640px;
+    margin: 0 auto;
+    color: var(--muted);
+}
+
+/* Stats / counters strip */
+.stats {
+    background: var(--primary-gradient);
+    color: #fff;
+    padding: 55px 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    text-align: center;
+}
+
+.stat-item .stat-number {
+    font-size: 2.8rem;
+    font-weight: 800;
+    line-height: 1;
+    color: #fff;
+}
+
+.stat-item .stat-number .plus {
+    color: var(--accent-color);
+}
+
+.stat-item .stat-label {
+    margin-top: 8px;
+    font-size: 0.98rem;
+    color: rgba(255, 255, 255, 0.88);
+    font-weight: 500;
+}
+
+/* Service card refinements */
+.service-card {
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+}
+
+.service-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.service-link {
+    margin-top: auto;
+    padding-top: 12px;
+    font-weight: 700;
+    color: var(--secondary-color);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.service-link:hover {
+    gap: 11px;
+    color: var(--primary-color);
+}
+
+/* How It Works / Process */
+.process {
+    background: var(--white);
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+}
+
+.process-step {
+    text-align: center;
+    padding: 30px 22px;
+    border-radius: var(--radius);
+    background: var(--light-color);
+    border: 1px solid var(--border);
+    position: relative;
+    transition: var(--transition);
+}
+
+.process-step:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-md);
+}
+
+.process-step .step-num {
+    width: 54px;
+    height: 54px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    background: var(--primary-gradient);
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.process-step h3 {
+    font-size: 1.15rem;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+.process-step p {
+    color: var(--muted);
+    margin-bottom: 0;
+    font-size: 0.95rem;
+}
+
+/* Feature card icon polish */
+.feature-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: rgba(0, 86, 179, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem !important;
+}
+
+/* Floating action buttons (all devices) */
+.fab-stack {
+    position: fixed;
+    right: 18px;
+    bottom: 22px;
+    z-index: 1200;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.fab {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.6rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.fab:hover {
+    transform: scale(1.08);
+    color: #fff;
+}
+
+.fab-whatsapp {
+    background: var(--whatsapp);
+}
+
+.fab-call {
+    background: var(--primary-color);
+    animation: fab-pulse 2s infinite;
+}
+
+@keyframes fab-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(0, 86, 179, 0.55); }
+    70% { box-shadow: 0 0 0 16px rgba(0, 86, 179, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 86, 179, 0); }
+}
+
+/* Mobile sticky call/quote bar */
+.mobile-cta-bar {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1150;
+    background: var(--white);
+    box-shadow: 0 -3px 14px rgba(0, 0, 0, 0.12);
+}
+
+.mobile-cta-bar a {
+    flex: 1;
+    text-align: center;
+    padding: 14px 8px;
+    font-weight: 700;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 0.95rem;
+}
+
+.mobile-cta-bar .mc-call { background: var(--primary-color); }
+.mobile-cta-bar .mc-quote { background: var(--secondary-color); }
+
+/* Inner-page heroes (service / area pages) clear the taller desktop header */
+@media (min-width: 769px) {
+    .hero-section { padding-top: 150px; }
+    .area-hero { padding-top: 160px; }
+}
+
+/* ---------- Responsive refinements ---------- */
+
+/* Tablets */
+@media (max-width: 992px) {
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 35px 20px; }
+    .process-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero h1 { font-size: 2.7rem; }
+    .header-cta { padding: 9px 16px; font-size: 0.9rem; }
+}
+
+/* Phones */
+@media (max-width: 768px) {
+    .top-bar { display: none; }
+    .header-cta { display: none; }
+
+    nav {
+        top: 70px;
+        width: 78%;
+        max-width: 320px;
+        overflow-y: auto;
+    }
+
+    .hero { margin-top: 70px; padding: 90px 0 110px; }
+    .hero h1 { font-size: 2.1rem; }
+    .hero p { font-size: 1.05rem; }
+    .hero-cta .btn { flex: 1 1 100%; }
+
+    .mobile-cta-bar { display: flex; }
+    .fab-stack { bottom: 74px; }
+
+    .stat-item .stat-number { font-size: 2.3rem; }
+
+    /* keep content clear of the sticky mobile bar */
+    footer { padding-bottom: 70px; }
+}
+
+@media (max-width: 576px) {
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .process-grid { grid-template-columns: 1fr; }
+    .hero-badge { font-size: 0.78rem; }
+    .hero-trust { font-size: 0.88rem; gap: 8px 18px; }
+    .fab { width: 50px; height: 50px; font-size: 1.4rem; }
 }
     </style>
 </head>

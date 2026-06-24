@@ -1,0 +1,1 @@
+<?php $areaSlug = 'isukathota'; include __DIR__ . '/_area-template.php';

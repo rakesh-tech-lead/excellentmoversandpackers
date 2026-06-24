@@ -5,11 +5,42 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container hero-content">
-            <h1>Professional Moving & Packing Services in Visakhapatnam</h1>
-            <p>We provide reliable, efficient, and affordable relocation services for homes and businesses. Your satisfaction is our top priority.</p>
-            <div>
-                <a href="#contact" class="btn">Get Free Quote</a>
-                <a href="#services" class="btn btn-secondary">Our Services</a>
+            <span class="hero-badge">⭐ 4.9/5 Rated · 2500+ Happy Moves</span>
+            <h1>Professional Moving &amp; Packing Services in <span class="accent">Visakhapatnam</span></h1>
+            <p>Reliable, efficient and affordable home &amp; office relocation. Trained staff, quality packing and on-time delivery — your satisfaction is our top priority.</p>
+            <div class="hero-cta">
+                <a href="tel:+918295588602" class="btn btn-accent">📞 Call Now</a>
+                <a href="https://wa.me/918295588602?text=Hi%2C%20I%20need%20a%20free%20moving%20quote." target="_blank" rel="noopener" class="btn btn-whatsapp">💬 WhatsApp Quote</a>
+                <a href="#contact" class="btn btn-outline">Get Free Quote</a>
+            </div>
+            <div class="hero-trust">
+                <span><span class="tick">✔</span> Free On-site Survey</span>
+                <span><span class="tick">✔</span> Safe &amp; Insured Moving</span>
+                <span><span class="tick">✔</span> No Hidden Charges</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats / Trust counters -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="12">0<span class="plus">+</span></div>
+                    <div class="stat-label">Years of Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="2500">0<span class="plus">+</span></div>
+                    <div class="stat-label">Successful Moves</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="50">0<span class="plus">+</span></div>
+                    <div class="stat-label">Trained Professionals</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="24">0</div>
+                    <div class="stat-label">Areas Served in Vizag</div>
+                </div>
             </div>
         </div>
     </section>
@@ -17,6 +48,7 @@
     <section id="services" class="section services">
         <div class="container">
             <div class="section-title">
+                <span class="eyebrow">What We Do</span>
                 <h2>Our Services</h2>
                 <p>We offer a wide range of moving and packing services tailored to meet your specific needs</p>
             </div>
@@ -28,6 +60,7 @@
                     <div class="service-content">
                         <h3>Home Relocation</h3>
                         <p>We handle all aspects of your home move, from packing and loading to transportation and unpacking at your new location.</p>
+                        <a class="service-link" href="/packers-movers/home-relocation.php">Learn More →</a>
                     </div>
                 </div>
                 <div class="service-card">
@@ -37,6 +70,7 @@
                     <div class="service-content">
                         <h3>Office Relocation</h3>
                         <p>Minimize downtime with our efficient office moving services. We ensure your business is up and running quickly at the new location.</p>
+                        <a class="service-link" href="/packers-movers/office-relocation.php">Learn More →</a>
                     </div>
                 </div>
                 <div class="service-card">
@@ -46,6 +80,7 @@
                     <div class="service-content">
                         <h3>Packing & Unpacking</h3>
                         <p>Our professional packers use quality materials to ensure your belongings are safely packed and unpacked at your destination.</p>
+                        <a class="service-link" href="/packers-movers/packing-unpacking.php">Learn More →</a>
                     </div>
                 </div>
                 <div class="service-card">
@@ -55,6 +90,7 @@
                     <div class="service-content">
                         <h3>Furniture Assembly</h3>
                         <p>We disassemble your furniture for safe transport and reassemble it at your new location, saving you time and effort.</p>
+                        <a class="service-link" href="/packers-movers/furniture-assembly.php">Learn More →</a>
                     </div>
                 </div>
                 <div class="service-card">
@@ -64,6 +100,7 @@
                     <div class="service-content">
                         <h3>Storage Solutions</h3>
                         <p>Need temporary storage? We offer secure storage facilities for your belongings until you're ready to move them.</p>
+                        <a class="service-link" href="/packers-movers/storage-solutions.php">Learn More →</a>
                     </div>
                 </div>
                 <div class="service-card">
@@ -73,7 +110,41 @@
                     <div class="service-content">
                         <h3>Vehicle Transportation</h3>
                         <p>We provide safe and reliable transportation for your vehicles, including cars, motorcycles, and more.</p>
+                        <a class="service-link" href="/packers-movers/vehicle-transportation.php">Learn More →</a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section process">
+        <div class="container">
+            <div class="section-title">
+                <span class="eyebrow">Simple Process</span>
+                <h2>How It Works</h2>
+                <p>Moving with us is quick and stress-free — just four easy steps</p>
+            </div>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-num">1</div>
+                    <h3>Get a Quote</h3>
+                    <p>Call or WhatsApp us. We assess your needs and share a free, transparent estimate.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">2</div>
+                    <h3>Pre-Move Survey</h3>
+                    <p>Our team plans the move, schedules a date and arranges the right packing material.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">3</div>
+                    <h3>Pack &amp; Move</h3>
+                    <p>We safely pack, load and transport your belongings with trained, careful staff.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">4</div>
+                    <h3>Unpack &amp; Settle</h3>
+                    <p>We unload, unpack and reassemble at your new home so you settle in effortlessly.</p>
                 </div>
             </div>
         </div>
@@ -101,6 +172,7 @@
     <section id="why-us" class="section why-us">
         <div class="container">
             <div class="section-title">
+                <span class="eyebrow">Our Strengths</span>
                 <h2>Why Choose Us</h2>
                 <p>Here's why Excellent Movers and Packers is the preferred choice for relocation services in Visakhapatnam</p>
             </div>
@@ -143,6 +215,7 @@
     <section id="testimonials" class="section testimonials">
         <div class="container">
             <div class="section-title">
+                <span class="eyebrow">Testimonials</span>
                 <h2>What Our Clients Say</h2>
                 <p>Don't just take our word for it - hear from our satisfied customers</p>
             </div>
@@ -152,9 +225,7 @@
                         <p>"Excellent Movers and Packers made my relocation process incredibly smooth. Their team was professional, efficient, and handled my belongings with care. I highly recommend their services!"</p>
                     </div>
                     <div class="client-info">
-                        <div class="client-img">
-                            <img src="/placeholder.svg?height=100&width=100" alt="Rajesh Kumar">
-                        </div>
+                        <div class="client-avatar" style="background:var(--primary-color);">RK</div>
                         <div>
                             <div class="client-name">Rajesh Kumar</div>
                             <div class="client-location">Visakhapatnam</div>
@@ -166,9 +237,7 @@
                         <p>"I was impressed by the professionalism and efficiency of Excellent Movers and Packers. They made my office relocation stress-free and completed the job within the promised timeframe."</p>
                     </div>
                     <div class="client-info">
-                        <div class="client-img">
-                            <img src="/placeholder.svg?height=100&width=100" alt="Priya Sharma">
-                        </div>
+                        <div class="client-avatar" style="background:var(--secondary-color);">PS</div>
                         <div>
                             <div class="client-name">Priya Sharma</div>
                             <div class="client-location">Visakhapatnam</div>
@@ -180,9 +249,7 @@
                         <p>"The team at Excellent Movers and Packers is truly excellent! They were punctual, careful with my belongings, and very helpful throughout the moving process. I would definitely use their services again."</p>
                     </div>
                     <div class="client-info">
-                        <div class="client-img">
-                            <img src="/placeholder.svg?height=100&width=100" alt="Suresh Reddy">
-                        </div>
+                        <div class="client-avatar" style="background:var(--accent-color);color:var(--dark-color);">SR</div>
                         <div>
                             <div class="client-name">Suresh Reddy</div>
                             <div class="client-location">Visakhapatnam</div>
@@ -197,6 +264,7 @@
     <section id="service-areas" class="section service-areas">
         <div class="container">
             <div class="section-title">
+                <span class="eyebrow">Coverage</span>
                 <h2>Our Service Areas</h2>
                 <p>We provide our moving and packing services throughout Visakhapatnam and surrounding areas</p>
             </div>
@@ -220,6 +288,7 @@
     <section id="contact" class="section contact">
         <div class="container">
             <div class="section-title">
+                <span class="eyebrow">Get In Touch</span>
                 <h2>Contact Us</h2>
                 <p>Get in touch with us for a free quote or to learn more about our services</p>
             </div>
@@ -247,7 +316,7 @@
                         <div class="contact-icon">✉️</div>
                         <div>
                             <h4>Email</h4>
-                            <p></p>
+                            <p><a href="mailto:excellentmoversandpackers68@gmail.com">excellentmoversandpackers68@gmail.com</a></p>
                         </div>
                     </div>
                     <div class="contact-detail">
