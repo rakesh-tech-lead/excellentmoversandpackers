@@ -234,8 +234,8 @@ $emp_email      = 'excellentmoversandpackers68@gmail.com';
                     </li>
                     <li><a href="https://excellentmoversandpackers.com/areas/">Areas</a></li>
                     <li><a href="https://excellentmoversandpackers.com/states/">States</a></li>
-                    <li><a href="/#about">About</a></li>
-                    <li><a href="/#why-us">Why Us</a></li>
+                    <li><a href="https://excellentmoversandpackers.com/about.php">About</a></li>
+                    <li><a href="https://excellentmoversandpackers.com/why-us.php">Why Us</a></li>
                     <li><a href="https://excellentmoversandpackers.com/blog/">Blog</a></li>
                     <li><a href="https://excellentmoversandpackers.com/faq.php">FAQ</a></li>
                     <li><a href="https://excellentmoversandpackers.com/contact-us.php">Contact Us</a></li>

@@ -130,5 +130,7 @@
 - [All Service Areas](https://excellentmoversandpackers.com/areas/)
 - [States We Serve](https://excellentmoversandpackers.com/states/)
 - [Blog](https://excellentmoversandpackers.com/blog/)
+- [About Us](https://excellentmoversandpackers.com/about.php)
+- [Why Choose Us](https://excellentmoversandpackers.com/why-us.php)
 - [FAQ](https://excellentmoversandpackers.com/faq.php)
 - [Contact Us](https://excellentmoversandpackers.com/contact-us.php)
