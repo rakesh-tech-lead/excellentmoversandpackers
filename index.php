@@ -289,6 +289,39 @@ include('header.php');
         </div>
     </section>
 
+    <!-- From Our Blog -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <span class="eyebrow">Resources</span>
+                <h2>From Our Blog</h2>
+                <p>Moving tips, packing advice and cost guides to help you plan a smooth relocation</p>
+            </div>
+            <div class="services-grid">
+                <?php
+                require_once __DIR__ . '/blog/blog-data.php';
+                $emp_home_posts = emp_posts();
+                $emp_pc = 0;
+                foreach ($emp_home_posts as $emp_slug => $emp_p):
+                    if ($emp_pc++ >= 3) break; ?>
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="<?php echo $emp_p['image']; ?>" alt="<?php echo htmlspecialchars($emp_p['title']); ?>" loading="lazy">
+                        </div>
+                        <div class="service-content">
+                            <h3><?php echo $emp_p['title']; ?></h3>
+                            <p><?php echo $emp_p['excerpt']; ?></p>
+                            <a class="service-link" href="/blog/<?php echo $emp_slug; ?>">Read more →</a>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+            <div style="text-align:center;margin-top:35px;">
+                <a href="/blog/" class="btn">View All Articles</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="section contact">
         <div class="container">

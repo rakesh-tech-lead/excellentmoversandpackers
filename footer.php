@@ -29,6 +29,7 @@
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#why-us">Why Choose Us</a></li>
                         <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="/blog/">Blog</a></li>
                         <li><a href="#contact">Contact Us</a></li>
                     </ul>
                 </div>

@@ -21,7 +21,7 @@
 }
 
 /* Slightly tighten the desktop nav on mid-size screens so all items fit on one line */
-@media (min-width: 769px) and (max-width: 1200px) {
+@media (min-width: 993px) and (max-width: 1200px) {
     #navbar a { padding: 10px 9px; font-size: 0.95rem; }
     .header-cta { margin-left: 14px; padding: 9px 14px; }
     .logo img { height: 50px; }
@@ -82,15 +82,15 @@
 }
 
 /* Show the dropdown when hovering over the parent li (desktop) */
-@media (min-width: 769px) {
+@media (min-width: 993px) {
     .dropdown:hover .dropdown-content,
     .dropdown.open .dropdown-content {
         display: block;
     }
 }
 
-/* Mobile: dropdown becomes inline accordion inside the slide-in nav */
-@media (max-width: 768px) {
+/* Mobile + tablet: dropdown becomes inline accordion inside the slide-in nav */
+@media (max-width: 992px) {
     .dropdown-content {
         position: static;
         box-shadow: none;
@@ -150,10 +150,11 @@ $emp_email      = 'excellentmoversandpackers68@gmail.com';
                             <a href="https://excellentmoversandpackers.com/packers-movers/vehicle-transportation.php">Vehicle Transportation</a>
                         </div>
                     </li>
-                    <li><a href="https://excellentmoversandpackers.com/areas/">Areas We Serve</a></li>
-                    <li><a href="https://excellentmoversandpackers.com/states/">States We Serve</a></li>
+                    <li><a href="https://excellentmoversandpackers.com/areas/">Areas</a></li>
+                    <li><a href="https://excellentmoversandpackers.com/states/">States</a></li>
                     <li><a href="/#about">About</a></li>
                     <li><a href="/#why-us">Why Us</a></li>
+                    <li><a href="https://excellentmoversandpackers.com/blog/">Blog</a></li>
                     <li><a href="https://excellentmoversandpackers.com/faq.php">FAQ</a></li>
                     <li><a href="https://excellentmoversandpackers.com/contact-us.php">Contact Us</a></li>
                 </ul>

@@ -661,7 +661,7 @@
             }
         }
         
-        @media (max-width: 768px) {
+        @media (max-width: 992px) {
             .mobile-menu-btn {
                 display: block;
             }
@@ -731,7 +731,7 @@
 }
 
 /* Responsive logo sizes */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .logo img {
         height: 50px;
     }
@@ -1039,7 +1039,7 @@
 .mobile-cta-bar .mc-quote { background: var(--secondary-color); }
 
 /* Inner-page heroes (service / area pages) clear the taller desktop header */
-@media (min-width: 769px) {
+@media (min-width: 993px) {
     .hero-section { padding-top: 150px; }
     .area-hero { padding-top: 160px; }
 }
@@ -1054,8 +1054,8 @@
     .header-cta { padding: 9px 16px; font-size: 0.9rem; }
 }
 
-/* Phones */
-@media (max-width: 768px) {
+/* Phones + tablets (hamburger menu range) */
+@media (max-width: 992px) {
     .top-bar { display: none; }
     .header-cta { display: none; }
 
